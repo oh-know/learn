@@ -64,3 +64,8 @@ vim常用操作
 			9.模式寄存器（last search pattern）："/，缓存最近的搜索模式。
 		操作：
 			:reg（查看看当前所有寄存器的状态，助记：register）
+解决乱码：
+   	vim ~/.vimrc文件，加上如下几行：
+   	set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+   	set termencoding=utf-8
+   	set encoding=utf-8
