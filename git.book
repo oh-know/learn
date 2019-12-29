@@ -1,0 +1,21 @@
+1、避免每次同步和提交都要输入账号密码
+  git config --global user.name [username]
+  git config --global user.password [password]
+  git config --global user.email [email]
+  git config --global core.autocrlf false // 必须使用，如果不增加的话，shell脚本会报错
+  PS：想要保存密码，需要执行：
+    git config --global credential.helper store
+    
+2、分支命名规则推荐：
+  release：预发布（灰度发布）
+  master：主分支（生产环境）
+  Tag-Test-XXXX：各业务线负责人拉取
+  feature：功能开发 -- 合并到Tag-Test-XXXX中
+  （feature/作者（简写）/任务号（大写））eg：feature/hzy/BB-8888
+  bugfix：紧急修复 -- 线上问题（从Tag-Test-XXXX检出）
+  hotfix：紧急修复 -- 线上问题（从master检出）
+  （hotfix/作者（简写）/任务号（大写））eg：hotfix/hzy/BB-8888
+  
+  分支的概念：
+    1、从哪个分支检出，必须合并到对应的分支（用例：从Tag-Test-XXXX检出合并到Tag—Test——XXXX，不允许跨出检出分支的情况）
+    2、分支申请合并冲突，检出的分支落后来源分支，需要在检出的分支操作合并来源分支，解决冲突，推送到服务器
