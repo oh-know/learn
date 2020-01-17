@@ -19,3 +19,17 @@
   分支的概念：
     1、从哪个分支检出，必须合并到对应的分支（用例：从Tag-Test-XXXX检出合并到Tag—Test——XXXX，不允许跨出检出分支的情况）
     2、分支申请合并冲突，检出的分支落后来源分支，需要在检出的分支操作合并来源分支，解决冲突，推送到服务器
+   
+分支操作：
+    git branch：查看本地分支
+    git branch -r：查看远程分支
+    git branch -a ：查看所有分支
+    git checkout new-branch：切换远程分支
+    
+    合并分支：
+    合并前要先切回要并入的分支
+    以下表示要把issue1234分支合并入master分支
+    git checkout master
+    git merge issue1234
+    https://blog.csdn.net/guo_qiangqiang/article/details/88020656
+
